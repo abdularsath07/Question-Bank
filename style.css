@@ -386,9 +386,9 @@ body {
 }
 
 /* ==========================================================================
-   LANDSCAPE & DESKTOP SCREEN ADJUSTMENTS (Media Queries)
+   LANDSCAPE & DESKTOP SCREEN ADJUSTMENTS (Media Queries FIXED)
    ========================================================================== */
-@min-width: 768px) {
+@media (min-width: 768px) {
     .navbar {
         padding: 20px 8%;
     }
@@ -396,7 +396,7 @@ body {
         padding: 60px 8% 100px 8%;
     }
     .hero-container {
-        flex-direction: row; /* Aligns text left and upload card right (Landscape look!) */
+        flex-direction: row; /* Arranges text left and upload panel right horizontally */
         gap: 5%;
     }
     .hero-text {
@@ -411,4 +411,5 @@ body {
     .content-section {
         padding: 60px 8%;
     }
-        }
+    }
+    
