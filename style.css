@@ -9,6 +9,7 @@
 body {
     background-color: #f8fafc;
     color: #1e293b;
+    overflow-x: hidden; /* Prevents awkward horizontal scrolling */
 }
 
 /* NAVBAR */
@@ -16,10 +17,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
+    padding: 20px 5%;
     background-color: #0b132b;
     color: white;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .logo {
@@ -31,10 +34,15 @@ body {
     color: #3a86ff;
 }
 
+.nav-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 .nav-links a {
     color: #cbd5e1;
     text-decoration: none;
-    margin: 0 15px;
     font-size: 14px;
     transition: color 0.3s;
 }
@@ -68,24 +76,26 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 13px;
 }
 
 /* HERO SECTION */
 .hero {
     background: radial-gradient(circle at 80% 20%, #1c2541 0%, #0b132b 100%);
     color: white;
-    padding: 60px 8% 100px 8%;
+    padding: 50px 5% 80px 5%;
 }
 
 .hero-container {
     display: flex;
+    flex-direction: column; /* Stacks vertically on tiny mobile portrait screens */
     justify-content: space-between;
     align-items: center;
     gap: 40px;
 }
 
 .hero-text {
-    max-width: 55%;
+    width: 100%;
 }
 
 .badge {
@@ -100,7 +110,7 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 46px;
+    font-size: 32px;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -112,20 +122,21 @@ body {
 
 .hero-text p {
     color: #94a3b8;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 /* SEARCH BAR */
 .search-container {
     background: white;
-    padding: 8px 8px 8px 20px;
+    padding: 6px 6px 6px 16px;
     border-radius: 12px;
     display: flex;
     align-items: center;
+    width: 100%;
     max-width: 500px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .search-icon {
@@ -137,7 +148,7 @@ body {
     border: none;
     outline: none;
     width: 100%;
-    font-size: 15px;
+    font-size: 14px;
     color: #1e293b;
 }
 
@@ -145,7 +156,7 @@ body {
     background-color: #3a86ff;
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 8px;
     font-weight: 500;
     cursor: pointer;
@@ -154,11 +165,12 @@ body {
 /* HERO FEATURES */
 .hero-features {
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .h-feature {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     display: flex;
     flex-direction: column;
@@ -166,7 +178,7 @@ body {
 
 .h-feature i {
     color: #3a86ff;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 5px;
 }
 
@@ -175,9 +187,9 @@ body {
     font-weight: 400;
 }
 
-/* MODERN UPLOAD CONTROL DESIGN */
+/* UPLOAD PANEL */
 .upload-panel {
-    width: 35%;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -185,138 +197,124 @@ body {
 .upload-box {
     background: rgba(255, 255, 255, 0.05);
     border: 2px dashed rgba(58, 134, 255, 0.4);
-    padding: 40px 30px;
+    padding: 30px 20px;
     border-radius: 20px;
     text-align: center;
     width: 100%;
-    max-width: 340px;
+    max-width: 360px;
     backdrop-filter: blur(10px);
 }
 
 .upload-icon {
-    font-size: 48px;
+    font-size: 40px;
     color: #3a86ff;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .upload-box h3 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .upload-box p {
-    font-size: 13px;
+    font-size: 12px;
     color: #94a3b8;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .file-label {
     background-color: #3a86ff;
     color: white;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 8px;
     font-weight: 500;
     cursor: pointer;
     display: inline-block;
-    transition: background 0.3s;
-}
-
-.file-label:hover {
-    background-color: #2563eb;
+    font-size: 14px;
 }
 
 .file-label input[type="file"] {
     display: none;
 }
 
-/* SUBJECTS SECTION & GENERAL LAYOUT */
+/* CONTENT SECTIONS */
 .content-section {
-    padding: 60px 8%;
-    margin-top: -40px;
+    padding: 40px 5%;
 }
 
 .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .section-header h2 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
 }
 
 .view-all-btn {
     color: #3a86ff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
 }
 
+/* GRID CONFIGURATIONS */
 .subject-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
 }
 
 .subject-card {
     background: white;
-    padding: 25px;
+    padding: 20px;
     border-radius: 16px;
-    flex: 1;
-    min-width: 170px;
     text-align: center;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.subject-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .sub-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 12px;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 12px auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .subject-card h3 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 4px;
 }
 
 .subject-card p {
-    font-size: 13px;
+    font-size: 12px;
     color: #64748b;
 }
 
-/* SUBJECT COLORS */
 .purple .sub-icon { background: #f3e8ff; color: #a855f7; }
 .green .sub-icon { background: #dcfce7; color: #22c55e; }
 .orange .sub-icon { background: #ffedd5; color: #f97316; }
 .pink .sub-icon { background: #fce7f3; color: #ec4899; }
 .blue .sub-icon { background: #e0f2fe; color: #0ea5e9; }
 
-/* LATEST UPLOADS CARDS GRID */
 .uploads-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
 .paper-card {
     background: white;
     border-radius: 16px;
-    padding: 24px;
+    padding: 20px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     position: relative;
     border: 1px solid #f1f5f9;
@@ -327,81 +325,90 @@ body {
 
 .new-tag {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 12px;
+    left: 12px;
     background-color: #fee2e2;
     color: #ef4444;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
-    padding: 2px 8px;
+    padding: 2px 6px;
     border-radius: 4px;
 }
 
 .paper-info-layout {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     margin-top: 15px;
 }
 
 .pdf-brand-icon {
     background-color: #fff1f2;
     color: #f43f5e;
-    width: 50px;
-    height: 60px;
+    width: 45px;
+    height: 55px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .pdf-brand-icon span {
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 700;
     margin-top: -2px;
 }
 
 .paper-details h4 {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: #1e293b;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
-.meta-txt {
-    font-size: 12px;
-    color: #64748b;
-}
-
-.sub-meta-txt {
-    font-size: 11px;
-    color: #94a3b8;
-    margin-bottom: 8px;
-}
-
-.file-size {
-    font-size: 12px;
-    font-weight: 500;
-    color: #64748b;
-}
+.meta-txt { font-size: 11px; color: #64748b; }
+.sub-meta-txt { font-size: 10px; color: #94a3b8; margin-bottom: 6px; }
+.file-size { font-size: 11px; font-weight: 500; color: #64748b; }
 
 .download-paper-btn {
     align-self: flex-end;
     background-color: #eff6ff;
     color: #3a86ff;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
-.download-paper-btn:hover {
-    background-color: #3a86ff;
-    color: white;
-}
+/* ==========================================================================
+   LANDSCAPE & DESKTOP SCREEN ADJUSTMENTS (Media Queries)
+   ========================================================================== */
+@min-width: 768px) {
+    .navbar {
+        padding: 20px 8%;
+    }
+    .hero {
+        padding: 60px 8% 100px 8%;
+    }
+    .hero-container {
+        flex-direction: row; /* Aligns text left and upload card right (Landscape look!) */
+        gap: 5%;
+    }
+    .hero-text {
+        width: 55%;
+    }
+    .upload-panel {
+        width: 35%;
+    }
+    .hero-text h1 {
+        font-size: 46px;
+    }
+    .content-section {
+        padding: 60px 8%;
+    }
+        }
